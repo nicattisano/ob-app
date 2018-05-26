@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      books: []
+    }
+  }
+  componentDidMount() {
+    let booksURL = "http://api-biblio.officebureau.ca/wp-json/wp/v2/posts";
+    fetch(booksURL)
+    .then(response => response.json())
+    .then(response => {
+      this.setState({
+        books: response
+      })
+    })
+  }
   render() {
+    let books = this.state.books.map((book, i) => {
+      return (
+        <div key={i}>
+          {book.title.rendered}
+        </div>
+      )
+    })
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {books}
       </div>
     );
   }
