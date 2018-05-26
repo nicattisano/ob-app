@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image, Clearfix } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Navigation from '../../containers/Navigation';
 
 class HomePage extends Component {
   constructor(){
@@ -29,8 +30,8 @@ class HomePage extends Component {
     })
     return (
       <div className="App">
-          <h1>Home</h1>
-          <Link to="/archives">Archives</Link>
+          <Navigation />
+          <h1>home</h1>
       </div>
     );
   }

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image, Clearfix } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Header from '../../components/Header';
+import SideBar from '../../containers/SideBar';
+import Navigation from '../../containers/Navigation';
 
 class SingleBookPage extends Component {
   constructor(){
@@ -47,17 +50,21 @@ class SingleBookPage extends Component {
 
     return (
       <div>
+        <Navigation />
+        <Header title={theTitle} />
         <Grid>
           <Row className="show-grid">
-            <Col md={8} mdOffset={2}>
+            <Col md={10} mdOffset={1}>
               <Row>
                 <Col md={8}>
-                  <h1>{theTitle}</h1>
-                  <p className="author">{`Author: ${author}`}</p>
-                  <Image src={coverImg} alt={altText} className="full"/>
+                  <div className="singleBookInfo">
+                    <h1>{theTitle}</h1>
+                    <p className="author">{`Author: ${author}`}</p>
+                    <Image src={coverImg} alt={altText} className="full"/>
+                  </div>
                 </Col>
                 <Col md={4}>
-                  <p>hey</p>
+                  <SideBar />
                 </Col>
               </Row>
             </Col>

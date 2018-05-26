@@ -41,6 +41,29 @@ h1, h2, h3, h4, h5, h6 {
     padding: 14px;
     margin-bottom: 30px;
     box-shadow: 2px 2px 2px #e6e6e6;
+    transition: .2s all;
+}
+
+.anArchive p {
+  float: left;
+  width: 100%;
+}
+
+.anArchive a:hover p {
+   text-decoration: none !important;
+ }
+
+.anArchive:hover {
+  cursor: pointer;
+  background: #f3f3f3;
+}
+
+.anArchive h1, .anArchive p {
+  color: #333;
+}
+
+.anArchive:hover h1 {
+  color: #6f3079;
 }
 
 .author {
@@ -64,4 +87,59 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   margin-top: 12px;
   display: block;
+}
+
+.singleBookInfo {
+  background: #fff;
+  min-height: 480px;
+  padding: 14px;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 2px #e6e6e6;
+  transition: .2s all;
+  float: left;
+  width: 100%;
+}
+
+.singleBookInfo h1 {
+  margin-top: 0;
+}
+
+.sideBarBooks {
+  list-style-type: none;
+  padding: 0;
+}
+.sideBarBooks li a {
+  color: #6f3079;
+  margin-bottom: 8px;
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.sideBarBooks li a:hover {
+  color: #000;
+}
+
+.sidebarH3 {
+  margin: 0 0 18px 0;
+}
+
+.navbar-inverse {
+  margin-bottom: 0;
+  background: #1d1d1d;
+  border-color: #1d1d1d;
+  border-radius: 0;
+}
+ul.nav li a {
+  color: #e6e6e6;
+  transition: 0.2s all;
+}
+ul.nav li a:hover, ul.nav li a:focus, ul.nav li a:focus {
+  text-decoration: none;
+  color: #fff;
+}
+
+a.navbar-brand {
+  font-family: 'Abril Fatface', cursive;
+  color: #fff !important;
 }
