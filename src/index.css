@@ -1,5 +1,67 @@
+/*@import url('https://fonts.googleapis.com/css?family=Tajawal');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif');*/
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  /*font-family: 'Tajawal', sans-serif;*/
+  font-family: 'Poppins', sans-serif;
+  background: #f2f2f2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  /*font-family: 'IBM Plex Serif', serif;*/
+  font-family: 'Abril Fatface', cursive;
+}
+
+.full {
+  width: 100%;
+  float: left;
+}
+
+.bookTitle {
+  font-size: 1.5em;
+  /*text-transform: uppercase;*/
+}
+
+.featuredArchiveImage {
+  height: 300px;
+  width: auto;
+  max-width: 100%;
+  /*margin: 0 auto;*/
+  display: block;
+}
+
+.anArchive {
+    background: #fff;
+    min-height: 480px;
+    padding: 14px;
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 2px #e6e6e6;
+}
+
+.author {
+  text-transform: capitalize;
+}
+
+.archiveBookBg {
+  background: red;
+  padding: 40px 0;
+  margin-bottom: 30px;
+  background: url(./images/bookbg.jpg) center;
+  background-size: cover;
+}
+.archiveBookBg h1{
+  margin: 0;
+  color: #fff;
+}
+
+.archiveBookBg .backToBooks {
+  color: rgba(255,255,255,.7);
+  text-align: center;
+  margin-top: 12px;
+  display: block;
 }
