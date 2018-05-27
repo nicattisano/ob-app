@@ -1,10 +1,7 @@
-import React, { Component } from 'react';
-import { Grid, Row, Col, Image, Clearfix } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Grid, Row, Col } from 'react-bootstrap';
 import SingleArchiveBox from './SingleArchiveBox.js';
 import Header from './Header.js';
-
-const Book = (props) => <li className="book-item">{props.name}</li>;
 
 class BookFilter extends React.Component {
 
@@ -30,7 +27,7 @@ class BookList extends React.Component {
     return (
         <div>
           { this.filter(this.props.books)
-              .map((book) => <SingleArchiveBox id={book.id} imgsrc={book._embedded['wp:featuredmedia']['0'].source_url} imgalt={book._embedded['wp:featuredmedia']['0'].alt_text} title={book.title.rendered} isbn={book.acf.isbn}></SingleArchiveBox>
+              .map((book) => <SingleArchiveBox key={book.id} id={book.id} imgsrc={book._embedded['wp:featuredmedia']['0'].source_url} imgalt={book._embedded['wp:featuredmedia']['0'].alt_text} title={book.title.rendered} isbn={book.acf.isbn} subjects={book.subject}></SingleArchiveBox>
           )}
         </div>
     )
@@ -44,7 +41,7 @@ class ArchivePage extends React.Component {
 
     this.state = {
       books: [],
-      filter: null
+      filter: ''
     };
   }
 

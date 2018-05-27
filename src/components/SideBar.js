@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Image, Clearfix } from 'react-bootstrap';
-import { Link, Router } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class SideBar extends Component {
   constructor(){
@@ -23,10 +23,9 @@ class SideBar extends Component {
   render() {
 
     let listOfBooks = this.state.displayedBooks.map((book, i) => {
-    let count = i + 1;
       return (
         <li key={i}>
-          <Link to={`/book/${book.id}`}>
+          <Link to={`/book/${book.id}`} replace="true">
               {book.title.rendered}
           </Link>
         </li>
