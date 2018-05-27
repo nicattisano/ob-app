@@ -128,28 +128,16 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 18px 0;
 }
 
-/*.navbar-inverse {
-  margin-bottom: 0;
-  background: #1d1d1d;
-  border-color: #1d1d1d;
-  border-radius: 0;
-}
-ul.nav li a {
-  color: #e6e6e6;
-  transition: 0.2s all;
-}
-ul.nav li a:hover, ul.nav li a:focus, ul.nav li a:focus {
-  text-decoration: none;
-  color: #fff;
-}
-
-a.navbar-brand {
-  font-family: 'Abril Fatface', cursive;
-  color: #fff !important;
-}*/
-
 .back {
     color: #6f3079;
     margin-bottom: 10px;
     display: block;
+}
+.inputSearch {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 11px 17px;
+    border-radius: 1px;
+    box-shadow: none;
+    border: none;
 }
