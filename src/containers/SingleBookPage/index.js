@@ -13,15 +13,24 @@ class SingleBookPage extends Component {
     }
   }
   componentDidMount() {
-    let bookURL = "http://api-biblio.officebureau.ca/wp-json/wp/v2/posts/57?_embed";
-    fetch(bookURL)
-    .then(response => response.json())
-    .then(response => {
-      this.setState({
-        book: response
-      })
-    })
   }
+
+
+    loadBook = (bookID = this.props.match.params.bookID) => {
+      fetch(`http://api-biblio.officebureau.ca/wp-json/wp/v2/posts/${bookID}?_embed`)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          book: response
+        })
+      })
+    }
+
+    componentWillMount() {
+      this.loadBook();
+    }
+
+
   render() {
     let theTitle = '';
     let coverImg = null;
@@ -51,8 +60,7 @@ class SingleBookPage extends Component {
     return (
       <div>
         <Navigation />
-        <Header title={theTitle} />
-        <Grid>
+        <Grid className="margTop">
           <Row className="show-grid">
             <Col md={10} mdOffset={1}>
               <Row>
