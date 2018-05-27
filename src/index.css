@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif');*/
 
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
-@import url('https://fonts.googleapis.com/css?family=Poppins:300');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,500');
 
 body {
   margin: 0;
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .anArchive {
     background: #fff;
-    min-height: 480px;
+    min-height: 500px;
     padding: 14px;
     margin-bottom: 30px;
     box-shadow: 2px 2px 2px #e6e6e6;
@@ -139,5 +139,31 @@ h1, h2, h3, h4, h5, h6 {
     padding: 11px 17px;
     border-radius: 1px;
     box-shadow: none;
-    border: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid rgba(255,255,255.0);
+}
+
+input.inputSearch:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.boldedHeading {
+  font-weight: 500;
+}
+
+.boldedHeading span {
+  font-weight: 300;
+}
+
+.subject {
+  font-weight: 300;
+  display: inline;
+  margin-right: 6px;
+  color: #6f3079;
+}
+.subject:hover {
+  color: #000;
 }

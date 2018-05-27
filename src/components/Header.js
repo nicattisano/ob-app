@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Image, Clearfix } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class Header extends Component {
 

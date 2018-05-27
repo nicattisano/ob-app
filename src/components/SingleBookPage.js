@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Image, Clearfix } from 'react-bootstrap';
+import { Grid, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Header from './Header.js';
 import SideBar from './SideBar.js';
 
 class SingleBookPage extends Component {
@@ -11,9 +10,6 @@ class SingleBookPage extends Component {
       book: {}
     }
   }
-  componentDidMount() {
-  }
-
 
     loadBook = (bookID = this.props.match.params.bookID) => {
       fetch(`http://api-biblio.officebureau.ca/wp-json/wp/v2/posts/${bookID}?_embed`)
