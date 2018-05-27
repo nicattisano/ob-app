@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image, Clearfix } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Header from '../../components/Header';
-import SideBar from '../../containers/SideBar';
-import Navigation from '../../containers/Navigation';
+import Header from './Header.js';
+import SideBar from './SideBar.js';
 
 class SingleBookPage extends Component {
   constructor(){
@@ -59,10 +58,14 @@ class SingleBookPage extends Component {
 
     return (
       <div>
-        <Navigation />
         <Grid className="margTop">
           <Row className="show-grid">
             <Col md={10} mdOffset={1}>
+              <Row>
+                <Col md={12}>
+                  <Link to="/" className="back">Back</Link>
+                </Col>
+              </Row>
               <Row>
                 <Col md={8}>
                   <div className="singleBookInfo">

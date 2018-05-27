@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image, Clearfix } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import SingleArchiveBox from '../../components/SingleArchiveBox';
-import Header from '../../components/Header';
 
 class SideBar extends Component {
   constructor(){

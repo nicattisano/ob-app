@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image, Clearfix } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import SingleArchiveBox from '../../components/SingleArchiveBox';
-import Header from '../../components/Header';
-import Navigation from '../../containers/Navigation';
+import SingleArchiveBox from './SingleArchiveBox.js';
+import Header from './Header.js';
 
 class ArchivePage extends Component {
   constructor(){
@@ -38,7 +37,6 @@ class ArchivePage extends Component {
      })
     return (
       <div>
-        <Navigation />
         <Header title="Books" />
         <Grid>
         </Grid>

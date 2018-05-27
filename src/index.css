@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 18px 0;
 }
 
-.navbar-inverse {
+/*.navbar-inverse {
   margin-bottom: 0;
   background: #1d1d1d;
   border-color: #1d1d1d;
@@ -146,4 +146,10 @@ ul.nav li a:hover, ul.nav li a:focus, ul.nav li a:focus {
 a.navbar-brand {
   font-family: 'Abril Fatface', cursive;
   color: #fff !important;
+}*/
+
+.back {
+    color: #6f3079;
+    margin-bottom: 10px;
+    display: block;
 }
