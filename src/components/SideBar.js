@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image, Clearfix } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Router } from 'react-router-dom';
 
 class SideBar extends Component {
   constructor(){
@@ -43,7 +43,7 @@ class SideBar extends Component {
         <Row>
           <Col md={12}>
             <ul className="sideBarBooks">
-              {listOfBooks}
+                {listOfBooks}
             </ul>
           </Col>
         </Row>
