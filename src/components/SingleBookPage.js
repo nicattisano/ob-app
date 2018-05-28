@@ -24,10 +24,10 @@ class SingleBookPage extends Component {
       })
     }
 
+
     componentWillMount() {
       this.loadBook();
     }
-
 
   render() {
 
@@ -39,22 +39,35 @@ class SingleBookPage extends Component {
     let coverImg = null;
     let altText = null;
     let author = '';
+    let inventoryNum = null;
+    let inventory = null;
 
     if (this.state.book !== undefined && this.state.book !== false) {
       if (this.state.book.title !== undefined) {
        theTitle = this.state.book.title.rendered;
       }
 
-      if (this.state.book._embedded && this.state.book._embedded['wp:featuredmedia']['0'].source_url !== undefined && this.state.book._embedded['wp:featuredmedia']['0'].source_url !== false) {
+      if (this.state.book._embedded && this.state.book._embedded['wp:featuredmedia']['0'].source_url !== 'undefined' && this.state.book._embedded['wp:featuredmedia']['0'].source_url !== false) {
         coverImg = this.state.book._embedded['wp:featuredmedia']['0'].source_url;
       }
 
-      if (this.state.book._embedded && this.state.book._embedded['wp:featuredmedia']['0'].alt_text !== undefined && this.state.book._embedded['wp:featuredmedia']['0'].alt_text !== false) {
+      if (this.state.book._embedded && this.state.book._embedded['wp:featuredmedia']['0'].alt_text !== 'undefined' && this.state.book._embedded['wp:featuredmedia']['0'].alt_text !== false) {
         altText = this.state.book._embedded['wp:featuredmedia']['0'].alt_text;
       }
 
-      if (this.state.book._embedded && this.state.book._embedded.author !== undefined && this.state.book._embedded.author !== false) {
+      if (this.state.book._embedded && this.state.book._embedded.author !== 'undefined' && this.state.book._embedded.author !== false) {
         author = this.state.book._embedded.author[0].name;
+      }
+
+      if (this.state.book.acf.inventory && this.state.book.acf.inventory !== 'undefined' && this.state.book.acf.inventory !== false) {
+        inventoryNum = this.state.book.acf.inventory;
+      }
+
+      inventoryNum = parseInt(inventoryNum);
+      if (inventoryNum > 0) {
+        inventory = `${inventoryNum} Available`;
+      } else {
+        inventory = 'Sorry, this book is out of stock.';
       }
 
     }
@@ -75,6 +88,7 @@ class SingleBookPage extends Component {
                   <div className="singleBookInfo">
                     <h1>{theTitle}</h1>
                     <p className="author">{`Author: ${author}`}</p>
+                    <p className="inventory">{inventory}</p>
                     <Image src={coverImg} alt={altText} className="full"/>
                   </div>
                 </Col>

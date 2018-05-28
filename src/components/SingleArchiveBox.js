@@ -26,7 +26,7 @@ class SingleArchiveBox extends Component {
     this.state.taxonomies.forEach(function(taxonomy, i) {
       subjectArray.forEach(function(sub){
         if (sub === taxonomy.id) {
-          subNames.push(<Link className="subject" to={`/subject/${taxonomy.id}/${taxonomy.slug}`}>{taxonomy.name},</Link>)
+          subNames.push(<a href={`/subject/${taxonomy.id}/${taxonomy.slug}`} className="subject">{taxonomy.name},</a>)
         }
         console.log(subNames);
       })
@@ -35,9 +35,7 @@ class SingleArchiveBox extends Component {
   }
 
   render() {
-
     let subjectArray = [];
-
     let taxonomy = this.state.taxonomies.map((taxonomy, i) => {
       if (this.props.subjects[i] === taxonomy.id) {
         subjectArray.push(taxonomy);

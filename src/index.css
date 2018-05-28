@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 270px;
   width: auto;
   max-width: 100%;
-  /*margin: 0 auto;*/
+  margin: 0 auto;
   display: block;
 }
 
@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
   list-style-type: none;
   padding: 0;
 }
-.sideBarBooks li a {
+.sideBarBooks a {
   color: #6f3079;
   margin-bottom: 8px;
   display: block;
@@ -191,6 +191,12 @@ a.headerBack {
   position: relative;
   top: 40%;
 }
+
+.inventory {
+  font-style: italic;
+  color: #adadad;
+}
+
 @media (max-width: 768px) {
   .featuredArchiveImage {
     height: 270px;
