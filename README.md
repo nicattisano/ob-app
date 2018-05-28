@@ -1,3 +1,12 @@
+Instructions on how to run ob-app locally:
+
+- clone repo
+- cd into repo
+- npm install
+- npm run start
+
+More info on create-react-app:
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
