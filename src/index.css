@@ -167,3 +167,30 @@ input.inputSearch:focus {
 .subject:hover {
   color: #000;
 }
+
+a.headerBack {
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    color: rgba(255,255,255,.8);
+}
+
+.loadingPage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width:100%;
+  height:100%;
+  margin:auto;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+}
+
+.loadingPage p {
+  font-size: 3em;
+  text-align: center;
+  position: relative;
+  top: 40%;
+}

@@ -28,32 +28,39 @@ class BookList extends React.Component {
     return (
         <div>
           { this.filter(this.props.books)
-              .map((book) => <SingleArchiveBox key={book.id} id={book.id} imgsrc={book._embedded['wp:featuredmedia']['0'].source_url} imgalt={book._embedded['wp:featuredmedia']['0'].alt_text} title={book.title.rendered} isbn={book.acf.isbn} subjects={book.subject}></SingleArchiveBox>
+              .map((book) => <SingleArchiveBox key={book.id} id={book.id} title={book.title.rendered} imgsrc={book._embedded['wp:featuredmedia']['0'].source_url} imgalt={book._embedded['wp:featuredmedia']['0'].alt_text} isbn={book.acf.isbn} subjects={book.subject}></SingleArchiveBox>
           )}
         </div>
     )
   }
 };
 
-class ArchivePage extends React.Component {
+class TaxonomyPage extends React.Component {
 
   constructor () {
     super();
 
     this.state = {
       books: [],
+      taxonomy_id: null,
+      taxonomy_slug: null,
       filter: '',
       loading: true
     };
   }
 
   componentDidMount() {
-    let booksURL = "http://api-biblio.officebureau.ca/wp-json/wp/v2/posts?_embed";
-    fetch(booksURL)
+    let taxID = this.props.match.params.taxID;
+    let taxSlug = this.props.match.params.taxSlug;
+    taxSlug = taxSlug.replace('-', ' ');
+    taxSlug = taxSlug.charAt(0).toUpperCase() + taxSlug.slice(1);
+    fetch(`http://api-biblio.officebureau.ca/wp-json/wp/v2/posts?_embed&subject=${taxID}`)
     .then(response => response.json())
     .then(response => {
       this.setState({
         books: response,
+        taxonomy_id: taxID,
+        taxonomy_slug: taxSlug,
         loading: false
       })
     })
@@ -73,9 +80,10 @@ class ArchivePage extends React.Component {
       return (<Loading />)
     }
 
+    let theTaxTerm = this.state.taxonomy_slug;
     return (
       <div>
-        <Header title="Books" back_visible={false} />
+        <Header title={theTaxTerm} back_visible={true} />
         <Grid>
           <Row className="show-grid searchRow">
             <Col md={6} mdOffset={3}>
@@ -93,4 +101,4 @@ class ArchivePage extends React.Component {
   }
 }
 
-export default ArchivePage;
+export default TaxonomyPage;

@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import SideBar from './SideBar.js';
+import Loading from './Loading.js';
 
 class SingleBookPage extends Component {
   constructor(){
     super();
     this.state = {
-      book: {}
+      book: {},
+      loading: true
     }
   }
 
@@ -16,7 +18,8 @@ class SingleBookPage extends Component {
       .then(response => response.json())
       .then(response => {
         this.setState({
-          book: response
+          book: response,
+          loading: false
         })
       })
     }
@@ -27,6 +30,11 @@ class SingleBookPage extends Component {
 
 
   render() {
+
+    if (this.state.loading == true) {
+      return (<Loading />)
+    }
+
     let theTitle = '';
     let coverImg = null;
     let altText = null;
