@@ -26,7 +26,7 @@ class SingleArchiveBox extends Component {
     this.state.taxonomies.forEach(function(taxonomy, i) {
       subjectArray.forEach(function(sub){
         if (sub === taxonomy.id) {
-          subNames.push(<a href={`/subject/${taxonomy.id}/${taxonomy.slug}`} className="subject">{taxonomy.name},</a>)
+          subNames.push(<a href={`/subject/${taxonomy.id}/${taxonomy.slug}`} className="subject">{`${taxonomy.name},`}</a>, )
         }
         console.log(subNames);
       })
@@ -49,8 +49,9 @@ class SingleArchiveBox extends Component {
                 <Image src={this.props.imgsrc} alt={this.props.imgalt} className="featuredArchiveImage" />
                 <h1 className="bookTitle full" dangerouslySetInnerHTML={{__html:this.props.title}}></h1>
                 <p className="boldedHeading">ISBN #: <span>{this.props.isbn}</span></p>
-                <p className="boldedHeading">Subjects: {this.getSubjects(this.props.subjects)}</p>
               </Link>
+                <p className="boldedHeading">Subjects: {this.getSubjects(this.props.subjects)}</p>
+
             </div>
           </Col>
       )
