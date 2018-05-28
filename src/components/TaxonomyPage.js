@@ -5,11 +5,9 @@ import Header from './Header.js';
 import Loading from './Loading.js';
 
 class BookFilter extends React.Component {
-
   handleChange (event) {
     this.props.updateSearch(event.target.value);
   }
-
   render () {
     return (
       <input type="text" placeholder="Search a Book Title" className="inputSearch" onChange={this.handleChange.bind(this)} value={this.props.searchText} />
@@ -17,7 +15,6 @@ class BookFilter extends React.Component {
   }
 }
 class BookList extends React.Component {
-
   filter (books) {
     if (!this.props.filter) {
       return books
@@ -27,19 +24,15 @@ class BookList extends React.Component {
   render () {
     return (
         <div>
-          { this.filter(this.props.books)
-              .map((book) => <SingleArchiveBox key={book.id} id={book.id} title={book.title.rendered} imgsrc={book._embedded['wp:featuredmedia']['0'].source_url} imgalt={book._embedded['wp:featuredmedia']['0'].alt_text} isbn={book.acf.isbn} subjects={book.subject}></SingleArchiveBox>
-          )}
+          { this.filter(this.props.books).map((book) => <SingleArchiveBox key={book.id} id={book.id} title={book.title.rendered} imgsrc={book._embedded['wp:featuredmedia']['0'].source_url} imgalt={book._embedded['wp:featuredmedia']['0'].alt_text} isbn={book.acf.isbn} subjects={book.subject}></SingleArchiveBox>)}
         </div>
     )
   }
 };
 
 class TaxonomyPage extends React.Component {
-
   constructor () {
     super();
-
     this.state = {
       books: [],
       taxonomy_id: null,
@@ -68,7 +61,6 @@ class TaxonomyPage extends React.Component {
 
   updateSearch (inputValue) {
     let filter = this.state.filter;
-
     this.setState({
       filter: inputValue
     });

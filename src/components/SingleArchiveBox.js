@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import ReadingList from './ReadingList.js';
 
 class SingleArchiveBox extends Component {
   constructor () {
@@ -10,7 +10,6 @@ class SingleArchiveBox extends Component {
       taxonomies: []
     };
   }
-
   componentDidMount() {
     fetch(`http://api-biblio.officebureau.ca/wp-json/wp/v2/subject/`)
     .then(response => response.json())
@@ -41,21 +40,19 @@ class SingleArchiveBox extends Component {
         subjectArray.push(taxonomy);
       }
     })
-
-      return (
-          <Col md={3} sm={4} xs={6} className="singlePostBox">
-            <div className="anArchive full">
-              <Link to={`/book/${this.props.id}`}>
-                <Image src={this.props.imgsrc} alt={this.props.imgalt} className="featuredArchiveImage" />
-                <h1 className="bookTitle full" dangerouslySetInnerHTML={{__html:this.props.title}}></h1>
-                <p className="boldedHeading">ISBN #: <span>{this.props.isbn}</span></p>
-              </Link>
-                <p className="boldedHeading">Subjects: {this.getSubjects(this.props.subjects)}</p>
-
-            </div>
-          </Col>
-      )
-
+    return (
+      <Col md={3} sm={4} xs={6} className="singlePostBox">
+        <div className="anArchive full">
+          <Link to={`/book/${this.props.id}`}>
+            <Image src={this.props.imgsrc} alt={this.props.imgalt} className="featuredArchiveImage" />
+            <h1 className="bookTitle full" dangerouslySetInnerHTML={{__html:this.props.title}}></h1>
+            <p className="boldedHeading">ISBN #: <span>{this.props.isbn}</span></p>
+          </Link>
+            <p className="boldedHeading">Subjects: {this.getSubjects(this.props.subjects)}</p>
+            <ReadingList />
+        </div>
+      </Col>
+    )
   }
 }
 

@@ -37,12 +37,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .anArchive {
-    background: #fff;
-    min-height: 500px;
-    padding: 14px;
-    margin-bottom: 30px;
-    box-shadow: 2px 2px 2px #e6e6e6;
-    transition: .2s all;
+  background: #fff;
+  min-height: 500px;
+  padding: 14px;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 2px #e6e6e6;
+  transition: .2s all;
+  position: relative;
 }
 
 .anArchive p {
@@ -67,9 +68,16 @@ h1, h2, h3, h4, h5, h6 {
   color: #6f3079;
 }
 
+.content {
+  font-size: 1.2em;
+}
+
 .author {
   text-transform: capitalize;
-  margin-bottom: 5px;
+  margin-bottom: 9px;
+  font-size: .9em;
+  color: #333;
+  font-weight: 300;
 }
 
 .archiveBookBg {
@@ -104,6 +112,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .singleBookInfo h1 {
   margin-top: 0;
+  margin-bottom: 9px;
+  font-size: 3.5em;
 }
 
 .sideBarBooks {
@@ -118,6 +128,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+.fullCover {
+  width: 70%;
+  float: left;
+}
+
 .sideBarBooks li a:hover {
   color: #000;
 }
@@ -127,25 +142,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back {
-    color: #6f3079;
-    margin-bottom: 10px;
-    display: block;
+  color: #6f3079;
+  margin-bottom: 10px;
+  display: block;
 }
 .inputSearch {
-    width: 100%;
-    margin-bottom: 30px;
-    padding: 11px 17px;
-    border-radius: 1px;
-    box-shadow: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 2px solid rgba(255,255,255.0);
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 11px 17px;
+  border-radius: 1px;
+  box-shadow: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid rgba(255,255,255.0);
 }
 
 input.inputSearch:focus {
-    outline: none;
-    border-color: #333;
+  outline: none;
+  border-color: #333;
 }
 
 .boldedHeading {
@@ -198,6 +213,35 @@ a.headerBack {
   color: #adadad;
   font-weight: 300;
   margin-bottom: 25px;
+  font-size: .9em;
+}
+
+.likeRow {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.addBtn {
+  border: none;
+  background: none;
+}
+
+.addBtn:focus, .addBtn:active, .addBtn:visited {
+  outline: none !important;
+}
+
+.tooltip-inner {
+  background-color: #6f3079;
+}
+
+.tooltip.right .tooltip-arrow {
+  border-right-color: #6f3079;
+}
+
+.tooltip-inner {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
 }
 
 @media (max-width: 768px) {
