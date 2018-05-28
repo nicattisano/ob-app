@@ -27,7 +27,6 @@ class SingleArchiveBox extends Component {
         if (sub === taxonomy.id) {
           subNames.push(<a href={`/subject/${taxonomy.id}/${taxonomy.slug}`} className="subject">{`${taxonomy.name},`}</a>, )
         }
-        console.log(subNames);
       })
     })
     return subNames;
@@ -49,7 +48,7 @@ class SingleArchiveBox extends Component {
             <p className="boldedHeading">ISBN #: <span>{this.props.isbn}</span></p>
           </Link>
             <p className="boldedHeading">Subjects: {this.getSubjects(this.props.subjects)}</p>
-            <ReadingList />
+            <ReadingList id={this.props.id} title={this.props.title}/>
         </div>
       </Col>
     )

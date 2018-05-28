@@ -244,6 +244,14 @@ a.headerBack {
   font-weight: 300;
 }
 
+.modal-body h1 {
+  text-align: center;
+}
+
+.modal-body p {
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .featuredArchiveImage {
     height: 270px;
