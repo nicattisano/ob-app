@@ -257,6 +257,9 @@ a.headerBack {
     height: 270px;
     width: auto;
   }
+  .fullCover {
+    width: 100%;
+  }
 }
 @media (max-width: 480px) {
   .singlePostBox {

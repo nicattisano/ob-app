@@ -28,9 +28,8 @@ class ReadingList extends Component {
   handleClose() {
     this.setState({ show: false });
   }
-
+  
   render() {
-
   const tooltip = (
     <Tooltip id="tooltip">
       Add to Reading List
