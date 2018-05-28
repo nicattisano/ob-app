@@ -1,19 +1,16 @@
-/*@import url('https://fonts.googleapis.com/css?family=Tajawal');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif');*/
-
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,500');
 
 body {
   margin: 0;
   padding: 0;
-  /*font-family: 'Tajawal', sans-serif;*/
   font-family: 'Poppins', sans-serif;
   background: #f2f2f2;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  /*font-family: 'IBM Plex Serif', serif;*/
   font-family: 'Abril Fatface', cursive;
 }
 
@@ -32,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .featuredArchiveImage {
-  height: 300px;
+  height: 270px;
   width: auto;
   max-width: 100%;
   /*margin: 0 auto;*/
@@ -193,4 +190,22 @@ a.headerBack {
   text-align: center;
   position: relative;
   top: 40%;
+}
+@media (max-width: 768px) {
+  .featuredArchiveImage {
+    height: 270px;
+    width: auto;
+  }
+}
+@media (max-width: 480px) {
+  .singlePostBox {
+    width: 100%;
+  }
+  .singlePostBox .featuredArchiveImage {
+    width: 100%;
+    height: auto;
+  }
+  .anArchive {
+    min-height: 470px;
+  }
 }
