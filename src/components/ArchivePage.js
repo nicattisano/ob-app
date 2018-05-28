@@ -66,7 +66,7 @@ class ArchivePage extends React.Component {
     }
     return (
       <div>
-        <Header title="Books" back_visible={false} />
+        <Header title="OfficeBureau Library" back_visible={false} />
         <Grid>
           <Row className="show-grid searchRow">
             <Col md={6} mdOffset={3}>
