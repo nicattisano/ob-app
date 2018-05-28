@@ -45,7 +45,7 @@ class SingleArchiveBox extends Component {
     })
 
       return (
-          <Col md={3} sm={4}>
+          <Col md={3} sm={4} xs={6} className="singlePostBox">
             <div className="anArchive full">
               <Link to={`/book/${this.props.id}`}>
                 <Image src={this.props.imgsrc} alt={this.props.imgalt} className="featuredArchiveImage" />
