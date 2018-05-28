@@ -6,7 +6,8 @@ class SideBar extends Component {
   constructor(){
     super();
     this.state = {
-      displayedBooks: []
+      displayedBooks: [],
+      loading: true
     }
   }
   componentDidMount() {
@@ -15,23 +16,27 @@ class SideBar extends Component {
     .then(response => response.json())
     .then(response => {
       this.setState({
-        displayedBooks: response
+        displayedBooks: response,
+        loading: false
       })
     })
   }
 
   render() {
 
+    if (this.state.loading == true) {
+      return (
+        <div className="sidebarLoading">Loading...</div>
+      )
+    }
+
     let listOfBooks = this.state.displayedBooks.map((book, i) => {
       return (
-        <li key={i}>
-          <Link to={`/book/${book.id}`} replace="true">
+          <a href={`/book/${book.id}`} key={i}>
               {book.title.rendered}
-          </Link>
-        </li>
+          </a>
       )
-
-     })
+    })
     return (
       <div>
         <Row>
@@ -41,9 +46,9 @@ class SideBar extends Component {
         </Row>
         <Row>
           <Col md={12}>
-            <ul className="sideBarBooks">
+            <div className="sideBarBooks">
                 {listOfBooks}
-            </ul>
+            </div>
           </Col>
         </Row>
       </div>
