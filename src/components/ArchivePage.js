@@ -5,19 +5,17 @@ import Header from './Header.js';
 import Loading from './Loading.js';
 
 class BookFilter extends React.Component {
-
   handleChange (event) {
     this.props.updateSearch(event.target.value);
   }
-
   render () {
     return (
       <input type="text" placeholder="Search a Book Title" className="inputSearch" onChange={this.handleChange.bind(this)} value={this.props.searchText} />
     )
   }
 }
-class BookList extends React.Component {
 
+class BookList extends React.Component {
   filter (books) {
     if (!this.props.filter) {
       return books
@@ -27,19 +25,15 @@ class BookList extends React.Component {
   render () {
     return (
         <div>
-          { this.filter(this.props.books)
-              .map((book) => <SingleArchiveBox key={book.id} id={book.id} imgsrc={book._embedded['wp:featuredmedia']['0'].source_url} imgalt={book._embedded['wp:featuredmedia']['0'].alt_text} title={book.title.rendered} isbn={book.acf.isbn} subjects={book.subject}></SingleArchiveBox>
-          )}
+          {this.filter(this.props.books).map((book) => <SingleArchiveBox key={book.id} id={book.id} imgsrc={book._embedded['wp:featuredmedia']['0'].source_url} imgalt={book._embedded['wp:featuredmedia']['0'].alt_text} title={book.title.rendered} isbn={book.acf.isbn} subjects={book.subject}></SingleArchiveBox> )}
         </div>
     )
   }
 };
 
 class ArchivePage extends React.Component {
-
   constructor () {
     super();
-
     this.state = {
       books: [],
       filter: '',
@@ -61,18 +55,15 @@ class ArchivePage extends React.Component {
 
   updateSearch (inputValue) {
     let filter = this.state.filter;
-
     this.setState({
       filter: inputValue
     });
   }
 
   render () {
-
     if (this.state.loading == true) {
       return (<Loading />)
     }
-
     return (
       <div>
         <Header title="Books" back_visible={false} />
